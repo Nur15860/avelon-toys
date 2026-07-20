@@ -31,10 +31,8 @@ export default function Home() {
 
       {/* প্রোডাক্ট সেকশন */}
       <main style={{ padding: '40px 20px', maxWidth: '1200px', margin: '0 auto' }}>
-        <h3 style={{ textBreak: 'center', fontSize: '1.8rem', color: '#4c6ef5', marginBottom: '30px', textAlign: 'center' }}>
-          আমাদের সেরা খেলনাসমূহ ✨
-        </h3>
-        
+        <h3 style={{ textAlign: 'center', fontSize: '1.8rem', color: '#4c6ef5', marginBottom: '30px' }}
+>আমাদের জনপ্রিয় খেলনা</h3>
         {/* প্রোডাক্ট গ্রিড */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
           {toys.map((toy) => (
