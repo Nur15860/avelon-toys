@@ -1,60 +1,33 @@
-import React from 'react';
-
 export default function Home() {
-  // ডেমো খেলনার ডাটা
-  const toys = [
-    { id: 1, name: "টেডি বিয়ার (Teddy Bear)", price: "৳১২০০", img: "🧸" },
-    { id: 2, name: "রিমোট কন্ট্রোল কার (RC Car)", price: "৳২৫০০", img: "🚗" },
-    { id: 3, name: "লেগো ব্লকস সেট (Lego Blocks)", price: "৳১৮০০", img: "🧱" },
-    { id: 4, name: "কিডস ডল হাউস (Doll House)", price: "৳৩০০০", img: "🏠" },
-  ];
-
   return (
-    <div style={{ fontFamily: 'Arial, sans-serif', margin: 0, padding: 0, backgroundColor: '#f9f9f9', color: '#333' }}>
-      
-      {/* হেডার / নেভিগেশন বার */}
-      <header style={{ backgroundColor: '#ff6b6b', padding: '20px', textAlign: 'center', color: 'white' }}>
-        <h1 style={{ margin: 0, fontSize: '2.5rem' }}>Avalon Toys 🧸</h1>
-        <p style={{ margin: '5px 0 0', fontSize: '1.1rem' }}>শিশুদের আনন্দের বিশ্বস্ত ঠিকানা</p>
-      </header>
-
-      {/* ব্যানার সেকশন */}
-      <section style={{ backgroundColor: '#ffe066', padding: '60px 20px', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2rem', color: '#ff6b6b', marginBottom: '10px' }}>নতুন কালেকশনের খেলনায় আকর্ষণীয় ছাড়! 🎉</h2>
-        <p style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 20px' }}>
-          আপনার সোনামণির হাসির জন্য আজই বেছে নিন সেরা এবং নিরাপদ সব খেলনা।
-        </p>
-        <button style={{ backgroundColor: '#ff6b6b', color: 'white', border: 'none', padding: '12px 25px', fontSize: '1rem', borderRadius: '25px', cursor: 'pointer', fontWeight: 'bold' }}>
-          সব খেলনা দেখুন
-        </button>
-      </section>
-
-  {/* প্রোডাক্ট সেকশন */}
-      <main style={{ padding: '40px 20px', maxWidth: '1200px', margin: '0 auto' }}>
-        <h3 style={{ textAlign: 'center', fontSize: '1.8rem', color: '#4c6ef5', marginBottom: '30px' }}>
-          আমাদের সেরা খেলনাসমূহ ✨
-        </h3>
-           
-        {/* প্রোডাক্ট গ্রিড */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
-          {toys.map((toy) => (
-            <div key={toy.id} style={{ backgroundColor: 'white', borderRadius: '10px', padding: '20px', textAlign: 'center', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', transition: 'transform 0.2s' }}>
-              <div style={{ fontSize: '4rem', marginBottom: '10px' }}>{toy.img}</div>
-              <h4 style={{ fontSize: '1.2rem', margin: '10px 0' }}>{toy.name}</h4>
-              <p style={{ fontSize: '1.1rem', color: '#ff6b6b', fontWeight: 'bold', margin: '5px 0 15px' }}>{toy.price}</p>
-              <button style={{ backgroundColor: '#4c6ef5', color: 'white', border: 'none', padding: '8px 15px', borderRadius: '5px', cursor: 'pointer', width: '100%' }}>
-                কার্টে যোগ করুন
-              </button>
-            </div>
-          ))}
+    <main className="flex min-h-screen flex-col items-center justify-center bg-slate-50 px-6 py-12 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+      <div className="w-full max-w-5xl rounded-[2rem] border border-slate-200 bg-white/90 p-10 shadow-xl shadow-slate-300/40 backdrop-blur dark:border-slate-800 dark:bg-slate-900/95">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-sm uppercase tracking-[0.35em] text-sky-600">
+            Avelon Toys
+          </p>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+            Smart, modern toy shopping built for every family.
+          </h1>
+          <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
+            Discover curated toys, fast delivery, and playful designs that make every day more fun.
+          </p>
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            <Card title="Featured Toys" description="Explore best sellers and newest arrivals." />
+            <Card title="Gift Ideas" description="Find the perfect gift for every age." />
+            <Card title="Safe Shipping" description="Fast, secure delivery with friendly support." />
+          </div>
         </div>
-      </main>
+      </div>
+    </main>
+  );
+}
 
-      {/* ফুটার */}
-      <footer style={{ backgroundColor: '#333', color: 'white', textAlign: 'center', padding: '20px', marginTop: '40px' }}>
-        <p style={{ margin: 0 }}>&copy; ২০২৬ Avalon Toys. সর্বস্বত্ব সংরক্ষিত।</p>
-      </footer>
-
+function Card({ title, description }: { title: string; description: string }) {
+  return (
+    <div className="rounded-3xl border border-slate-200 bg-slate-50/90 p-6 text-left shadow-sm shadow-slate-200/50 dark:border-slate-700 dark:bg-slate-800/80 dark:shadow-none">
+      <h2 className="text-xl font-semibold">{title}</h2>
+      <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{description}</p>
     </div>
   );
 }
